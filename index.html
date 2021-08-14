@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SVG Tool v1</title>
+    <meta name="description" content="A simple too tool to accurately generate circles or rectangles around the circumference of a circle.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<div id="container">
+    <div id="sidePanel">
+        <h1>SVG Tool v1</h1>
+        <div id="svgForm">
+            <form name="svgGenerator" method="post">
+                <div>
+                    <label for="svgObjects">
+                        Number of Objects<br>
+                        <input type="number" min="1" name="svgObjects" id="svgObjects">
+                    </label>
+                </div>
+                <div>
+                    <label for="svgDiameter">
+                        Circle Diameter<br>
+                        <input type="number" min="0" name="svgDiameter" id="svgDiameter">
+                    </label>
+                </div>
+                <div>
+                    <label for="svgShape">
+                        Object Type<br>
+                        <select name="svgShape" id="svgShape">
+                            <option value="default">Select Shape</option>
+                            <option value="circ">Circle</option>
+                            <!--                <option value="ellipse">Ellipse</option>-->
+                            <option value="rect">Rectangle</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="shapeRadius">
+                        Radius<br>
+                        <input type="number" min=".05" step=".01" value="1" name="shapeRadius" id="shapeRadius" disabled>
+                    </label>
+                    <label for="shapeWidth">
+                        Width<br>
+                        <input type="number" min=".05" step=".01" value="1" name="shapeWidth" id="shapeWidth" disabled>
+                    </label>
+                    <label for="shapeHeight">
+                        Height<br>
+                        <input type="number" min=".05" step=".01" value="1" name="shapeHeight" id="shapeHeight" disabled>
+                    </label>
+                    <label for="shapeRotation">
+                        Rotation (Degrees)<br>
+                        <input type="number" min="0" max="360" value="0" name="shapeRotation" id="shapeRotation" disabled>
+                    </label>
+                </div>
+                <div>
+                    <input type="submit" id="submit" class="btn grnBtn" value="Generate" disabled>
+                </div>
+            </form>
+            <button id="clear" class="btn redBtn" disabled>Clear</button>
+            <button id="export" class="btn bluBtn" disabled>Export</button>
+        </div>
+        <div id="panelFooter">
+            <p><a class="link" href="/">About</a></p>
+            <p>Scott Cottam 2021</p>
+        </div>
+    </div>
+    <div id="mainContent">
+        <div id="svgContent">
+            <svg xmlns="http://www.w3.org/2000/svg" height="500" width="500" viewBox="0 0 100 100">
+            </svg>
+        </div>
+    </div>
+</div>
+
+<script src="./js/tool.js"></script>
+
+</body>
+
+</html>
